@@ -1,26 +1,28 @@
 # Setting up SQL server development environment on Mac OS & Docker
 
-## TLDR
+## A short background
 
-It super easy and convenient to run a desired version of SQL Server in an isolated environment using Docker containers.
+### Why Mac OS?
 
-## A little background
+I'm a web developer & CI/CD process administrator in my everyday work in Geta. I have Mac OS as my host OS for many years now and really enjoy the benefits what I get using devicess in so called "Mac ecosystem". Won't go in more details about this but basically that is why Mac is mentioned in the title.
 
-Why Mac OS?
+### Why SQL Server?
 
-Why SQL Server?
+Our companies core business is to produce web applications & services built on .NET platform and obviously SQL Server is most common database engine choice since it fits well with .NET applications. This means that pretty much every developer in our company has to run local SQL Server instance for local development purposes. And obviously there haven't been easy solutions to run SQL Server natively on Mac OS, which requires me to run it on Windows hosted on Parallels VM, which in turn makes me sacrifice some host OS resources. And as I mentioned before, I take it in favor of having some other benefits of having Mac OS. :)
 
-Why Docker? Docker noob.
+### Why Docker?
 
-Why just now?
+Docker / containers / microservice architecture etc. has been a buzz word for me (from sessions in conferences, different blog posts, buddy in the company who have had hands-on experience with Docker - [Klavs Prieditis](https://prieditis.lv)) for a several years, but I never managed to discover these things more. And then few weeks ago I somewhere on the Internet :) ran into this MSDN post about [running SQL Server 2017 container with Docker](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker). Finally the last thing which nailed all this was the message from [Valdis](https://getadigital.com/people/valdis-iljuconoks/) about the new lightweight [SQL tool by Microsoft](https://github.com/Microsoft/sqlopsstudio) which can be run natively on Mac OS. 
 
-## The problem 
+So these are basically the reasons why it was right time for me to try if all these pieces of puzzle fit well together and I can get more independance from Windows. Eventually it was easy to set up everything, it is easy to use, it performs much faster than on Parallels VM, I'm happy! :)
+
+## Problem 
 
 Dependant on Parallels VM. Takes long time to start up. Running app on VM is not as resource-efficient as running app on native OS.
 
 SSMS (SQL Server Management Studio) very comprehensive tool, but often too heavy to do a basic stuff e.g. run basic table queries, create new users, grant permissions etc.
 
-## Steps
+## Solution
 
 ### 1. Install Docker engine (Docker for Mac in my case)
 
@@ -44,7 +46,8 @@ Again, this is also very simple (even without any previous Docker knowledge) if 
    sudo docker pull microsoft/mssql-server-linux:2017-latest
    ```
    Btw, really sweet progress bar for Docker CLI. :)
-   ![Docker CLI progress](Images/DockerCLILoader.mov)
+   
+   ![Docker CLI progress](Images/DockerCLILoader.gif)
 
 2. Run container image on your Docker engine.
 
@@ -78,4 +81,4 @@ Now you can create new db from script or restore it by first copying backup file
 
 ## Summary
 
-With small effort it is possible to set up OS independent SQL Server instance, which can be easily stopped, transferred to other computer, run in parallel with other versions / instances of SQL server. That can make life much easier for many developers (especially who's host OS is Mac OS). And it is even nicer for Mac people when there is appropriate SQL tool which is free and can run natively on your OS.
+With rather small effort it is possible to set up OS-independent SQL Server instance, which can be easily stopped, transferred to other environment, ran together with other versions / instances of SQL server etc. That gives a lot of flexibility and makes life much easier for many developers (especially those who are on Mac OS). And now it is even easier life for Mac OS people when there is sufficient SQL tool which is free and can run natively on their OS.
