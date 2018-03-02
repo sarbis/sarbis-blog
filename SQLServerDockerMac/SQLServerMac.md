@@ -1,4 +1,4 @@
-# Setting up SQL server development environment on Mac OS & Docker
+# Setting up SQL server on Docker in Mac OS
 
 ## A short background
 
@@ -46,7 +46,7 @@ Again, this is also very simple (even without any previous Docker knowledge) if 
    sudo docker pull microsoft/mssql-server-linux:2017-latest
    ```
    Btw, really sweet progress bar for Docker CLI. :)
-   
+
    ![Docker CLI progress](Images/DockerCLILoader.gif)
 
 2. Run container image on your Docker engine.
