@@ -85,7 +85,7 @@ You can now either create new db from script or restore it by first copying back
 
 Just wanted to note that there is also [SQL Server Command Line Tools for Mac](https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/03/sql-server-command-line-tools-for-mac-preview-now-available/) which is another relatively new SQL tool from Microsoft which is now available for Mac OS natively (in preview version though). It is yet another evidence that .NET stack developers are slowly "set free" of having to use Windows.
 
-_sqlcmd_ can be installed via the [Homebrew](https://brew.sh) package manager which (as many Mac users probably already know) is really handy tool for ~~brewing a beer~~ easy & quick installation of various applications from Terminal.
+_sqlcmd_ can be installed via the [Homebrew](https://brew.sh) package manager which (as many Mac users probably already know) is really handy tool for easy ~~beer brewing~~ installation of various applications from Terminal.
 
 At first link the _sqlcmd_ git repository with `brew tap` command.
 ```bash
