@@ -1,5 +1,7 @@
 # Setting up SQL server on Docker in Mac OS
 
+In this post I would like to tell about a brief insight of benefits what Docker can provide to you as a .NET stack developer working with SQL Server. Maybe the main focus and excitement this time will be about the new opportunities in local development on Mac OS, nevertheless the good things what Docker can bring to you are more than just that.
+
 ## A short background
 
 ### Why Mac OS?
