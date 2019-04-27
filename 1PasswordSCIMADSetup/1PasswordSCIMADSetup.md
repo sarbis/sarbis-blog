@@ -57,14 +57,18 @@ Speaking of the benefits. In the enterprise environment there are often multiple
 
 ## User creation process
 
-I would like to mention also one nice touch in the user creation process what this particular setup ensures. It's about the situation when you have to create, let's say, new AD user for someone joining your company and have to set an original AD password for it. Traditionally you would probably create an AD user and all the relevant accounts for the new person a day or few before the person starts in the company. The question is - where do you keep the orginal account passwords and how do you ultimately shared them with the person. Sending as a unencripted email is not secure. Storing it in your own password manager and sharing it with the person later is a bit destructing process. So the described setup provides quite a nice process to mitigate this problem here:
-1. Create new login item for the new AD user _manually_ in your 1Password vault and generate a secure password for it.
-2. Create an AD user _manually_ and use the generated password as original password from the 1Password (which later will have to be reset obviously).
-3. AD user gets _automatically_ provisioned into your 1Password account and the 1Password invitation is sent to the person's email specified in an AD.
-4. 1Password user's private vault gets created _automatically_ and _is available to the 1Password provision administrators_ as long as user hasn't accepted the invitation.
-5. Move the new persons's relevenat login items and passwords _manually_ from your 1password private vault into his/her private vault.
-6. When the person starts in your company, he/she approves the invitation and his/her private vault gets _automatically_ attached to his/her 1Password user. Nobody but user itself has access to the user's private vault from now on.
-So I found this process pretty cool because it's secure way of sharing passwords and at the same time it makes my work process so to say smoother and requires my (admin's) attention once only when I'm creating all the original users and accounts. Later when the employee comes to the company on the first day, he/she must be able to proceed further with all the on-boarding things himself starting with the 1Password invitation in the mailbox.
+I would like to mention also one nice touch in the user creation process what this particular setup ensures. It's about the situation when you have to create, let's say, new AD user for someone joining your company and have to set an original AD password for it. Traditionally you would probably create an AD user and all the relevant accounts for the new person a day or few before the person starts in the company. The question is - where do you keep the orginal account passwords and how do you ultimately shared them with the person. Sending as a unencripted email is not secure. Storing it in your own password manager and sharing it with the person later is a bit destructing process. So the described setup provides quite a nice process to mitigate this problem.
+
+![User creation process](Media/1Password-user-creation.png)
+
+1. _Manually_ create a new login item for the new AD user in your 1Password vault and generate a secure password for it.
+2. _Manually_ create an AD user and use the generated password as original password from the 1Password (which later will have to be reset obviously).
+3. _Automatically_ AD user gets provisioned into your 1Password account and the 1Password invitation is sent to the person's email specified in an AD.
+4. _Automatically_ private vault gets created in 1Password for the user and is available *only* to the 1Password provision administrators as long as invited user hasn't completed the account registration.
+5. _Manually_ move the new persons's relevenat login items and passwords from your 1password private vault into his/her private vault.
+6. _Automatically_ user's private vault gets attached to his/her 1Password user when the person starts in your company and completes the account registration. Nobody but user itself has access to the private vault from now on.
+
+So I found this process pretty cool because it's a secure way of sharing passwords and at the same time it makes my work process kind of straightforward and requires my (admin's) attention only once when I'm creating all the original users and accounts. Later when the employee comes to the company on the first day, he/she must be able to proceed further with all the on-boarding things himself starting with the 1Password invitation in the mailbox.
 
 ## Containers and the Kubernetes
 
